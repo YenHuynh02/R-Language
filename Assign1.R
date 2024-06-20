@@ -85,10 +85,10 @@ for (k in 1:length(x)) {
     }
     return(L)
   }
-
+  
   x_seq <- seq(min(x), max(x), length.out = 100)
   Lk_vals <- sapply(x_seq, Lk)
-
+  
   # "main" use for display the number of table like L 1 (x), etc.
   # "type" for specify the shape of line
   plot(x_seq, Lk_vals, type = "l", main = paste("L", k, "(x)"), xlab = "x", ylab = "L(x)")
@@ -100,3 +100,9 @@ dev.off()
 # Use poly.calc to find the interpolating function
 pf_x <- poly.calc(x, y)
 pf_x
+
+# Find f(15) and f(24)
+f_15_MyIntCal <- MyIntCal(x, y, 15)
+f_24_MyIntCal <- MyIntCal(x, y, 24)
+f_15_MyIntCal
+f_24_MyIntCal
